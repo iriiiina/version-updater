@@ -1,1 +1,1 @@
-# version-updater
+# Version-Updater Bash Script

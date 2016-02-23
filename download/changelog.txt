@@ -1,0 +1,20 @@
+v6.2 (12.02.2016)
+* template content and comments are being added to functions-local.sh
+
+v6.1 (11.02.2016)
+* new global variable $isVersionCheckRequired is added
+* manual link is being changed in readme.txt
+* changelog.txt is added
+* live term is changed to prod (production): show-status-of-live-applications.sh  -> show-status-of-prod-applications.sh and deployBatchModulesLive() -> deployBatchModulesProd()
+* check of gloval variables is added to function.sh/printStatistics()
+* refactor functions.sh/printStatistics() function to avoid duplicated code
+
+v6.0 (05.02.2016)
+* silent functionality is renamed to parallel (which is official term of Tomcat), so silent flag is changed to p flag
+* modules autocomplete in ./update-version-tomcat.sh has been added
+* comments support in all files (using #)
+* file with global variables has been renamed set-variables.sh -> conf.sh
+* local variable $war in functions-local.sh has been renamed to $fileName
+* local variable $type in functions-local.sh has been renamed to $clusterName
+* new global variables are available in conf.sh
+* new easier way of installing script into new environment is available

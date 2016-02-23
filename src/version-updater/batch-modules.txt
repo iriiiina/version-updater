@@ -1,0 +1,16 @@
+#####################################################################################################################
+### This file contains modules and versions that need to be updated with batch-update-versions-tomcat.sh script   ###
+### It should be modified every time before batch update                                                          ###
+### File can be downloaded from HG repo:                                                                          ###
+###    http://ehealth.webmedia.ee/scripts/version-updater/batch-modules.txt                                       ###
+###                                                                                                               ###
+### Author: Irina.Ivanova@nortal.com                                                                              ###
+### Last modified: 12.02.2016, v6.2                                                                               ###
+### Version-updater manual:                                                                                       ###
+###    https://confluence.nortal.com/display/support/Version-updater+Script+Manual                                ###
+#####################################################################################################################
+
+### Example of modules list:
+# admin 1.1.1.1
+# billing 2.2.2.2
+# diet 3.3.3.3

@@ -3,12 +3,11 @@
 ########################################################################################################################
 ### This is script for listing deployed applications on multiple-server and multiple-cluster environment (Tomcat 8)  ###
 ### It doesn't require modifications and can be used out-of-the-box                                                  ###
-### File can be downloaded from HG repo:                                                                             ###
-###    http://ehealth.webmedia.ee/scripts/version-updater/show-status-of-prod-applications.sh                        ###
 ###                                                                                                                  ###
-### Author: Irina.Ivanova@nortal.com                                                                                 ###
+### Author: Irina Ivanova, iriiiina@gmail.com                                                                        ###
 ### Last modified: 4.02.2016, v2.0                                                                                   ###
-### Version-updater manual: https://confluence.nortal.com/display/support/Version-updater+Script                     ###
+### Version-updater manual:                                                                                          ###
+###    https://iriiiina.gitbooks.io/version-updater-manual/content/                                                  ###
 ########################################################################################################################
 
 # Import of global variables and functions

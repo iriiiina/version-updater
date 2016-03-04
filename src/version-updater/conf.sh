@@ -5,12 +5,12 @@
 ### Here you can define environment specific variables and configure functionality of the script   ###
 ###                                                                                                ###
 ### Version-updater is script for updating ehealth modules on different servers                    ###
-### Currently Tomcat 8 and WebLogic 12c are supported                                              ###
+### Currently Tomcat 8 is supported                                                                ###
 ###                                                                                                ###
-### Author: Irina.Ivanova@nortal.com                                                               ###
+### Author: Irina Ivanova, iriiiina@gmail.com                                                      ###
 ### Last modified: 12.02.2016, v6.2                                                                ###
 ### Version-updater manual:                                                                        ###
-###     https://confluence.nortal.com/display/support/Version-updater+Script+Manual                ###
+###     https://iriiiina.gitbooks.io/version-updater-manual/content/                               ###
 ######################################################################################################
 
 

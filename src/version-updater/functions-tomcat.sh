@@ -1,16 +1,14 @@
 #!/bin/bash
 
-#########################################################################################
-### This is file with Tomcat 8 specific global functions                              ###
-### It doesn't require modifications and should be used out-of-the-box                ###
-### File can be downloaded from HG repo:                                              ###
-###    http://ehealth.webmedia.ee/scripts/version-updater/functions-tomcat.sh         ###
-###                                                                                   ###
-### Author: Irina.Ivanova@nortal.com                                                  ###
-### Last modified: 12.02.2016, v6.2                                                   ###
-### Version-updater manual:                                                           ###
-###    https://confluence.nortal.com/display/support/Version-updater+Script+Manual    ###
-#########################################################################################
+###########################################################################
+### This is file with Tomcat 8 specific global functions                ###
+### It doesn't require modifications and should be used out-of-the-box  ###
+###                                                                     ###
+### Author: Irina Ivanova, iriiiina@gmail.com                           ###
+### Last modified: 12.02.2016, v6.2                                     ###
+### Version-updater manual:                                             ###
+###    https://iriiiina.gitbooks.io/version-updater-manual/content/     ###
+###########################################################################
 
 function restart() {
   printInfo "Restarting the Tomcat";

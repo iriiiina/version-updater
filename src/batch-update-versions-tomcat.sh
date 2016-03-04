@@ -1,16 +1,14 @@
 #!/bin/bash
 
-###############################################################################################
-### This is script for updating many modules at a time on Tomcat 8 server                   ###
-### It doesn't require modifications and can be used out-of-the-box                         ###
-### File can be downloaded from HG repo:                                                    ###
-###    http://ehealth.webmedia.ee/scripts/version-updater/batch-update-versions-tomcat.sh   ###
-###                                                                                         ###
-### Author: Irina.Ivanova@nortal.com                                                        ###
-### Last modified: 12.02.2016, v6.2                                                         ###
-### Version-updater manual:                                                                 ###
-###    https://confluence.nortal.com/display/support/Version-updater+Script+Manual          ###
-###############################################################################################
+##############################################################################
+### This is script for updating many modules at a time on Tomcat 8 server  ###
+### It doesn't require modifications and can be used out-of-the-box        ###
+###                                                                        ###
+### Author: Irina Ivanova, iriiiina@gmail.com                              ###
+### Last modified: 12.02.2016, v6.2                                        ###
+### Version-updater manual:                                                ###
+###    https://iriiiina.gitbooks.io/version-updater-manual/content/        ###
+##############################################################################
 
 # Import of global variables and functions
 . version-updater/conf.sh

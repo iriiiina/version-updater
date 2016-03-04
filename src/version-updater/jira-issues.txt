@@ -1,40 +1,13 @@
 ##########################################################################################
 ### This file contain module and JIRA issue code mappings for updating issue summary   ###
 ### It should be modified one time while version-updater is being installed            ###
-### File can be downloaded from HG repo:                                               ###
-###    http://ehealth.webmedia.ee/scripts/version-updater/jira-issues.txt              ###
 ###                                                                                    ###
-### Author: Irina.Ivanova@nortal.com                                                   ###
+### Author: Irina Ivanova, iriiiina@gmail.com                                          ###
 ### Last modified: 12.02.2016, v6.2                                                    ###
 ### Version-updater manual:                                                            ###
-###    https://confluence.nortal.com/display/support/Version-updater+Script+Manual     ###
+###    https://iriiiina.gitbooks.io/version-updater-manual/content/                    ###
 ##########################################################################################
 
 ### Example of content:
-# admin:EHEALTHADM-426
-# authentication:EHEALTHAUT-75
-# authorization:EHEALTHSEC-202
-
-### List of eHealth modules:
-# admin:
-# authentication:
-# authorization:
-# billing:
-# clinician-portal:
-# consumer-portal:
-# diagnostics:
-# diet:
-# docman:
-# integration:
-# integration-lt:
-# lab-ordering:
-# person:
-# prevention:
-# reception:
-# register:
-# report-engine:
-# reports:
-# schedule:
-# system:
-# treatment:
-# ui:
+# admin:ADM-426
+# authentication:AUT-75

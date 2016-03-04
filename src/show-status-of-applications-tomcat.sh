@@ -1,16 +1,14 @@
 #!/bin/bash
 
-##############################################################################################
-### This is script for listing deployed applications on Tomcat 8 server                    ###
-### It doesn't require modifications and can be used out-of-the-box                        ###
-### File can be downloaded from HG repo:                                                   ###
-###    http://ehealth.webmedia.ee/scripts/version-updater/show-status-of-applications.sh   ###
-###                                                                                        ###
-### Author: Irina.Ivanova@nortal.com                                                       ###
-### Last modified: 4.02.2016, v2.0                                                         ###
-### Version-updater manual:                                                                ###
-###    https://confluence.nortal.com/display/support/Version-updater+Script                ###
-##############################################################################################
+############################################################################
+### This is script for listing deployed applications on Tomcat 8 server  ###
+### It doesn't require modifications and can be used out-of-the-box      ###
+###                                                                      ###
+### Author: Irina Ivanova, iriiiina@gmail.com                            ###
+### Last modified: 4.02.2016, v2.0                                       ###
+### Version-updater manual:                                              ###
+###    https://iriiiina.gitbooks.io/version-updater-manual/content/      ###
+############################################################################
 
 # Import global viariables and functions
 . version-updater/conf.sh

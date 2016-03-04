@@ -1,2 +1,2 @@
-Author: Irina.Ivanova@nortal.com
-Manual: https://confluence.nortal.com/display/support/Version-updater+Script+Manual
+Author: Irina Ivanova, iriiiina@gmail.com
+Manual: https://iriiiina.gitbooks.io/version-updater-manual/content/

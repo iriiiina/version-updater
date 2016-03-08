@@ -2,7 +2,7 @@
 
 ###########################################################################
 ### This is file with global functions fro version-updater              ###
-### It doesn't require modifications and should be used out-of-the-box  ###
+### You may want to change some functions – see details in comments     ###
 ###                                                                     ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                           ###
 ### Last modified: 12.02.2016, v6.2                                     ###
@@ -223,6 +223,8 @@ function deleteTempFiles() {
   printOk "temporary files $tempFiles/*$moduleName* are deleted";
 }
 
+# You may need to modify this function according to your versioning pattern
+# Currently function works with pattern 1.1.1.1
 function compareVersions() {
   currentStage=$(echo $currentVersion | grep -o --regexp='^[0-9]*')
   stage=$(echo $version | grep -o --regexp='^[0-9]*')
@@ -408,8 +410,8 @@ function findClusterName() {
 
   if [[ $clusterName = "" ]]; then
     clusterErrors+=("$module-$version$tomcatManagerName")
-    printError "can't figure out if $module is eHealth or HIS";
-    log "ERROR: can't figure out if $module is eHealth or HIS";
+    printError "can't figure out the cluster name for $module module";
+    log "ERROR: can't figure out the cluster name for $module module";
   fi
 }
 
@@ -477,7 +479,6 @@ function printStatistics() {
   fi
 
   printBatchErrors "DOWNLOAD" "$(echo ${downloadErrors[@]})";
-  printBatchErrors "PRECOMPILE" "$(echo ${precompileErrors[@]})";
   printBatchWarnings "UNDEPLOY" "$(echo ${undeployWarnings[@]})";
   printBatchErrors "DEPLOY" "$(echo ${deployErrors[@]})";
   printBatchErrors "RUN" "$(echo ${runErrors[@]})";

@@ -1,6 +1,6 @@
 ##########################################################################################
-### This file contain module and JIRA issue code mappings for updating issue summary   ###
-### It should be modified one time while version-updater is being installed            ###
+### This file contains module and JIRA issue code mappings for updating issue summary  ###
+### It should be modified one time while Version-Updater is being installed            ###
 ###                                                                                    ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                                          ###
 ### Last modified: 12.02.2016, v6.2                                                    ###

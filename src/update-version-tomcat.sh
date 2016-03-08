@@ -2,7 +2,7 @@
 
 ########################################################################################
 ### This is script for updating one module on Tomcat 8 server                        ###
-### It doesn't require modifications and can be used out-of-the-box                  ###
+### It may require modifications – see comments for details                          ###
 ###                                                                                  ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                                        ###
 ### Last modified: 12.02.2016, v6.2                                                  ###
@@ -76,10 +76,11 @@ if [[ $isMultiServer == "Y" ]]; then
     exit
   fi
 
-  if [[ $type == "ehealth" ]]; then
-    for index in ${!ehealthTomcatManagers[@]}
+  # If variables $firstTomcatManagers and $secondTomcatManagers were renamed, you should also rename them here
+  if [[ $type == "first" ]]; then
+    for index in ${!firstTomcatManagers[@]}
     do
-      tomcatManager=${ehealthTomcatManagers[$index]}
+      tomcatManager=${firstTomcatManagers[$index]}
       tomcatManagerName=$index
 
       printGray "\n\t*****UPDATE $module-$version$tomcatManagerName*****";
@@ -101,10 +102,10 @@ if [[ $isMultiServer == "Y" ]]; then
       checkIsRunning;
     done
 
-  elif [[ $type == "his" ]]; then
-    for index in ${!hisTomcatManagers[@]}
+  elif [[ $type == "second" ]]; then
+    for index in ${!secondTomcatManagers[@]}
     do
-      tomcatManager=${hisTomcatManagers[$index]}
+      tomcatManager=${secondTomcatManagers[$index]}
       tomcatManagerName=$index
 
       printGray "\n\t*****UPDATE $module-$version$tomcatManagerName*****";
@@ -125,6 +126,9 @@ if [[ $isMultiServer == "Y" ]]; then
 
       checkIsRunning;
     done
+
+  # You may want to add more elif conditions here if you have more than 2 Tomcat servers
+
   else
     printError "can't find Tomcat Managers for module type $type";
     log "ERROR: can't find Tomcat Managers for module type $type";

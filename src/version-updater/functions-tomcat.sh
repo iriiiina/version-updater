@@ -2,7 +2,7 @@
 
 ###########################################################################
 ### This is file with Tomcat 8 specific global functions                ###
-### It doesn't require modifications and should be used out-of-the-box  ###
+### You may want to make some changes here – see comments for details   ###
 ###                                                                     ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                           ###
 ### Last modified: 12.02.2016, v6.2                                     ###
@@ -55,6 +55,8 @@ function startup() {
 
 function getCurrentVersion() {
   printInfo "Getting current version of $moduleName$tomcatManagerName";
+
+  # You may want to change regular expression here, according to your versioning pattern
   currentVersion=$(curl "$tomcatManager/list" | grep "^/$moduleName:" | grep -o --regexp='[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*')
 
   if [[ "$currentVersion" == "" ]]; then
@@ -135,10 +137,11 @@ function deployBatchModulesProd() {
     printOk "file $fileName is downloaded";
     log "OK: $fileName is downloaded";
 
-    if [[ $clusterName == "ehealth" ]]; then
-      for index in ${!ehealthTomcatManagers[@]}
+    # If name of $firstTomcatManagers and $secondTomcatManagers were renamed, you need to also rename them here
+    if [[ $clusterName == "first" ]]; then
+      for index in ${!firstTomcatManagers[@]}
       do
-        tomcatManager=${ehealthTomcatManagers[$index]}
+        tomcatManager=${firstTomcatManagers[$index]}
         tomcatManagerName=$index
 
         printGray "\n\t*****UPDATE $module-$version$tomcatManagerName*****";
@@ -169,11 +172,11 @@ function deployBatchModulesProd() {
 
       printCyan "********************Update of $module-$version is completed********************";
 
-    elif [[ $clusterName == "his" ]]; then
+    elif [[ $clusterName == "second" ]]; then
 
-      for index in ${!hisTomcatManagers[@]}
+      for index in ${!secondTomcatManagers[@]}
       do
-        tomcatManager=${hisTomcatManagers[$index]}
+        tomcatManager=${secondTomcatManagers[$index]}
         tomcatManagerName=$index
 
         printGray "\n\t*****UPDATE $module-$version$tomcatManagerName*****";
@@ -202,6 +205,8 @@ function deployBatchModulesProd() {
       removeExistingFileWithSameName;
 
       printCyan "********************Update of $module-$version is completed********************";
+
+    # You may want to add more elif conditions here, if you have more that 2 Tomcat clusters
 
     else
       printError "can't find Tomcat Managers for cluster name $clusterName";

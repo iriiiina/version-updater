@@ -69,32 +69,32 @@ function verifyConfFile() {
 
   checkErrorCount=0;
 
-  if [ $isAuthenticationRequired != "N" ] && [ $isAuthenticationRequired != "Y" ] && [ $isAuthenticationRequired != "" ]; then
+  if [[ $isAuthenticationRequired != "N" ]] && [[ $isAuthenticationRequired != "Y" ]] && [[ $isAuthenticationRequired != "" ]]; then
     printError "error in set variables.sh configurations: isAuthenticationRequired value can be only N, Y or NULL";
     checkErrorCount=1
   fi
 
-  if [ $isJiraIssueUpdateRequired != "N" ] && [ $isJiraIssueUpdateRequired != "Y" ] && [ $isJiraIssueUpdateRequired != "" ]; then
+  if [[ $isJiraIssueUpdateRequired != "N" ]] && [[ $isJiraIssueUpdateRequired != "Y" ]] && [[ $isJiraIssueUpdateRequired != "" ]]; then
     printError "error in set variables.sh configurations: isJiraIssueUpdateRequired value can be only N, Y or NULL";
     checkErrorCount=1
   fi
 
-  if [ $isRestartRequired != "N" ] && [ $isRestartRequired != "Y" ] && [ $isRestartRequired != "" ]; then
+  if [[ $isRestartRequired != "N" ]] && [[ $isRestartRequired != "Y" ]] && [[ $isRestartRequired != "" ]]; then
     printError "error in set variables.sh configurations: isRestartRequired value can be only N, Y or NULL";
     checkErrorCount=1
   fi
 
-  if [ $isLogDeletionRequired != "N" ] && [ $isLogDeletionRequired != "Y" ] && [ $isLogDeletionRequired != "" ]; then
+  if [[ $isLogDeletionRequired != "N" ]] && [[ $isLogDeletionRequired != "Y" ]] && [[ $isLogDeletionRequired != "" ]]; then
     printError "error in set variables.sh configurations: isLogDeletionRequired value can be only N, Y or NULL";
     checkErrorCount=1
   fi
 
-  if [ $isTempFilesDeletionRequired != "N" ] && [ $isTempFilesDeletionRequired != "Y" ] && [ $isTempFilesDeletionRequired != "" ]; then
+  if [[ $isTempFilesDeletionRequired != "N" ]] && [[ $isTempFilesDeletionRequired != "Y" ]] && [[ $isTempFilesDeletionRequired != "" ]]; then
     printError "error in set variables.sh configurations: isTempFilesDeletionRequired value can be only N, Y or NULL";
     checkErrorCount=1
   fi
 
-  if [ $isMultiServer != "Y" ] && [ $isMultiServer != "N" ] && [ $isMultiServer != "" ]; then
+  if [[ $isMultiServer != "Y" ]] && [[ $isMultiServer != "N" ]] && [[ $isMultiServer != "" ]]; then
     printError "error in conf.sh configurations: isMultiServer value can be only N, Y or NULL";
     checkErrorCount=1
   fi
@@ -129,12 +129,12 @@ function verifyConfFile() {
     checkErrorCount=1
   fi
 
-  if [ $isVersionCheckRequired != "Y" ] && [ $isVersionCheckRequired != "N" ] && [ $isVersionCheckRequired != "" ]; then
+  if [[ $isVersionCheckRequired != "Y" ]] && [[ $isVersionCheckRequired != "N" ]] && [[ $isVersionCheckRequired != "" ]]; then
     printError "error in conf.sh configurations: isVersionCheckRequired value can be only N, Y ot NULL";
     checkErrorCount=1
   fi
 
-  if [ $checkErrorCount -gt 0 ]; then
+  if [[ $checkErrorCount -gt 0 ]]; then
     notify;
     exit
   fi
@@ -187,7 +187,7 @@ function removeLock() {
     rm $lock
     printOk "lock file $lock is removed";
   fi
-  
+
   notify;
 }
 

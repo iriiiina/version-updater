@@ -5,7 +5,7 @@
 ### It may require modifications – see comments for details                          ###
 ###                                                                                  ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                                        ###
-### Last modified: 12.02.2016, v6.2                                                  ###
+### Last modified: 28.06.2016, v6.3                                                  ###
 ### Version-updater manual:                                                          ###
 ###    https://iriiiina.gitbooks.io/version-updater-manual/content/                  ###
 ########################################################################################
@@ -28,7 +28,8 @@ echo -e "\n----------one module update: $module-$version----------" >> $log
 
 if [[ $isAuthenticationRequired == "Y" ]]; then
   user=$3
-  lock="UPDATING_$user-$module-$version.loc"
+  lock="UPDATING_$user-$module-$version-$(date +"%d.%m.%Y-%H:%M:%S").loc"
+  touch $lock
   isParallelDeployment $4;
 
   notify;
@@ -38,11 +39,10 @@ if [[ $isAuthenticationRequired == "Y" ]]; then
   testJiraAuthentication;
 
 elif [[ $isAuthenticationRequired == "N" ]]; then
-  lock="UPDATING-$module-$version.loc"
+  lock="UPDATING_$module-$version-$(date +"%d.%m.%Y-%H:%M:%S").loc"
+  touch $lock
   isParallelDeployment $3;
 fi
-
-touch $lock
 
 setVariables;
 

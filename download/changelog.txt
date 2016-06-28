@@ -1,3 +1,6 @@
+v6.3 (28.06.2016)
+* improve locking
+
 v6.2 (12.02.2016)
 * template content and comments are being added to functions-local.sh
 

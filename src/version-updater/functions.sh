@@ -5,7 +5,7 @@
 ### You may want to change some functions – see details in comments     ###
 ###                                                                     ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                           ###
-### Last modified: 12.02.2016, v6.2                                     ###
+### Last modified: 28.06.2016, v6.3                                     ###
 ### Version-updater manual:                                             ###
 ###     https://iriiiina.gitbooks.io/version-updater-manual/content/    ###
 ###########################################################################
@@ -58,7 +58,7 @@ function log() {
 
 function verifyLock() {
   if test -e "UPDATING_"*; then
-    printError "somebody is updating, see .loc file for details";
+    printError "somebody is updating: $(ls UPDATING_*)";
     printRed "\n\n";
     notify;
     exit

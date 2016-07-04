@@ -5,7 +5,7 @@
 ### It may require modifications – see comments for details                          ###
 ###                                                                                  ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                                        ###
-### Last modified: 28.06.2016, v6.3                                                  ###
+### Last modified: 04.07.2016, v6.3                                                  ###
 ### Version-updater manual:                                                          ###
 ###    https://iriiiina.gitbooks.io/version-updater-manual/content/                  ###
 ########################################################################################
@@ -67,7 +67,7 @@ fi
 if [[ $isMultiServer == "Y" ]]; then
   removeExistingFileWithSameName;
 
-  if [ $type != "" ]; then
+  if [ $clusterName != "" ]; then
     printGray "\n\t**********$module-$version**********";
 
     downloadFile;
@@ -77,7 +77,7 @@ if [[ $isMultiServer == "Y" ]]; then
   fi
 
   # If variables $firstTomcatManagers and $secondTomcatManagers were renamed, you should also rename them here
-  if [[ $type == "first" ]]; then
+  if [[ $clusterName == "first" ]]; then
     for index in ${!firstTomcatManagers[@]}
     do
       tomcatManager=${firstTomcatManagers[$index]}
@@ -102,7 +102,7 @@ if [[ $isMultiServer == "Y" ]]; then
       checkIsRunning;
     done
 
-  elif [[ $type == "second" ]]; then
+  elif [[ $clusterName == "second" ]]; then
     for index in ${!secondTomcatManagers[@]}
     do
       tomcatManager=${secondTomcatManagers[$index]}
@@ -130,11 +130,11 @@ if [[ $isMultiServer == "Y" ]]; then
   # You may want to add more elif conditions here if you have more than 2 Tomcat servers
 
   else
-    printError "can't find Tomcat Managers for module type $type";
-    log "ERROR: can't find Tomcat Managers for module type $type";
+    printError "can't find Tomcat Managers for module type $clusterName";
+    log "ERROR: can't find Tomcat Managers for module type $clusterName";
   fi
 
-  if [ $type != "" ]; then
+  if [ $clusterName != "" ]; then
     if [[ $isJiraIssueUpdateRequired == "Y" ]] && [ ${#runErrors[*]} -eq 0 ]; then
       updateIssueSummary;
     fi

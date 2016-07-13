@@ -5,7 +5,7 @@
 ### You may want to change some functions – see details in comments     ###
 ###                                                                     ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                           ###
-### Last modified: 28.06.2016, v6.3                                     ###
+### Last modified: 13.07.2016, v6.4                                     ###
 ### Version-updater manual:                                             ###
 ###     https://iriiiina.gitbooks.io/version-updater-manual/content/    ###
 ###########################################################################
@@ -84,16 +84,6 @@ function verifyConfFile() {
     checkErrorCount=1
   fi
 
-  if [[ $isLogDeletionRequired != "N" ]] && [[ $isLogDeletionRequired != "Y" ]] && [[ $isLogDeletionRequired != "" ]]; then
-    printError "error in set variables.sh configurations: isLogDeletionRequired value can be only N, Y or NULL";
-    checkErrorCount=1
-  fi
-
-  if [[ $isTempFilesDeletionRequired != "N" ]] && [[ $isTempFilesDeletionRequired != "Y" ]] && [[ $isTempFilesDeletionRequired != "" ]]; then
-    printError "error in set variables.sh configurations: isTempFilesDeletionRequired value can be only N, Y or NULL";
-    checkErrorCount=1
-  fi
-
   if [[ $isMultiServer != "Y" ]] && [[ $isMultiServer != "N" ]] && [[ $isMultiServer != "" ]]; then
     printError "error in conf.sh configurations: isMultiServer value can be only N, Y or NULL";
     checkErrorCount=1
@@ -119,13 +109,13 @@ function verifyConfFile() {
     checkErrorCount=1
   fi
 
-  if [[ $isLogDeletionRequired == "Y" ]] && ([[ $appLogs == "" ]] || [[ $tomcatLogs == "" ]]); then
-    printError "error in conf.sh configurations: appLogs or tomcatLogs can't be NULL if isLogDeletionRequired is Y";
+  if [[ $isRestartRequired == "Y" ]] && ([[ $appLogs == "" ]] || [[ $tomcatLogs == "" ]]); then
+    printError "error in conf.sh configurations: appLogs or tomcatLogs can't be NULL if isRestartRequired is Y";
     checkErrorCount=1
   fi
 
-  if [[ $isTempFilesDeletionRequired == "Y" ]] && [[ $tempFiles == "" ]]; then
-    printError "error in conf.sh configurations: tempFiles can't be NULL if isTempFilesDeletionRequired is Y";
+  if [[ $isRestartRequired == "Y" ]] && [[ $tempFiles == "" ]]; then
+    printError "error in conf.sh configurations: tempFiles can't be NULL if isRestartRequired is Y";
     checkErrorCount=1
   fi
 

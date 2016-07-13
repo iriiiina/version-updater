@@ -8,7 +8,7 @@
 ### Currently Tomcat 8 is supported                                                                ###
 ###                                                                                                ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                                                      ###
-### Last modified: 12.02.2016, v6.2                                                                ###
+### Last modified: 13.07.2016, v6.4                                                                ###
 ### Version-updater manual:                                                                        ###
 ###     https://iriiiina.gitbooks.io/version-updater-manual/content/                               ###
 ######################################################################################################
@@ -60,18 +60,14 @@ tomcatBin="tomcat/bin"
 
 ### Configure logs deletion functionality.
 ### Possible variables:
-###    isLogDeletionRequired=""  # required Y or N value; if value is Y, then script deletes log files with module's name befire update
-###       appLogs=""             # required only if isLogDeletionRequired="Y", otherwise not in use; file path, where application logs are stored, like "logs/*"
-###       tomcatLogs=""          # required only if isLogDeletionRequired="Y", otherwise not in use; file path, where Tomcat logs are stored, like "tomcat8070/logs/*"
-isLogDeletionRequired="N"
+###     appLogs=""             # required only if isRestartRequired="Y", otherwise not in use; file path, where application logs are stored, like "logs/*"
+###     tomcatLogs=""          # required only if isRestartRequired="Y", otherwise not in use; file path, where Tomcat logs are stored, like "tomcat8070/logs/*"
 appLogs="logs/*"
 tomcatLogs="tomcat/logs/*"
 
 ### Configure temporary files deletion functionality.
 ### Possible variables:
-###    isTempFilesDeletionRequired=""   # required Y or N value; if value is Y, then script deletes temporary files
-###        tempFiles=""                 # required only if isTempFilesDeletionRequired="Y", otherwise not in use; file path, where temporary files are sored, like "tomcat8070/temp"
-isTempFilesDeletionRequired="N"
+###      tempFiles=""                 # required only if isRestartRequired="Y", otherwise not in use; file path, where temporary files are sored, like "tomcat8070/temp"
 tempFiles="tomcat/temp"
 
 ### Configure version comparison to warn users if they deploy older version than currently runs
@@ -92,11 +88,11 @@ isVersionCheckRequired="Y"
 ### declare -A firstTomcatManagers
 ### firstTomcatManagers["@prdapp01:8080"]="http://username:password@prdapp01:8080/manager/text"
 ### firstTomcatManagers["@prdapp02:8080"]="http://username:password@prdapp02:8080/manager/text"
-### 
+###
 ### declare -A secondTomcatManagers
 ### secondTomcatManagers["@prdapp01:8090"]="http://username:password@prdapp01:8090/manager/text"
 ### secondTomcatManagers["@prdapp02:8090"]="http://username:password@prdapp02:8090/manager/text"
-###  
+###
 ### declare -A modules
 ### modules["admin"]="first"
 ### modules["authentication"]="first"

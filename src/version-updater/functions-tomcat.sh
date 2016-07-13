@@ -5,22 +5,15 @@
 ### You may want to make some changes here – see comments for details   ###
 ###                                                                     ###
 ### Author: Irina Ivanova, iriiiina@gmail.com                           ###
-### Last modified: 12.02.2016, v6.2                                     ###
+### Last modified: 13.07.2016, v6.4                                     ###
 ### Version-updater manual:                                             ###
 ###    https://iriiiina.gitbooks.io/version-updater-manual/content/     ###
 ###########################################################################
 
-function restart() {
-  printInfo "Restarting the Tomcat";
-  shutdown;
-  startup;
-  printOk "Tomcat is restarted";
-}
-
 function shutdown() {
   printInfo "Shutting server down";
   ./$tomcatBin/shutdown.sh | wc -l
-  sleep 5
+  sleep 10
 
   down=$(curl "$tomcatManager/list" | grep "503 Service Temporarily Unavailable")
 
@@ -38,7 +31,7 @@ function shutdown() {
 function startup() {
   printInfo "Starting server up";
   ./$tomcatBin/startup.sh | wc -l
-  sleep 5
+  sleep 10
 
   up=$(curl "$tomcatManager/list" | grep "^/:running:")
 
@@ -153,7 +146,7 @@ function deployBatchModulesProd() {
         fi
 
         checkNumberOfDeploys;
-        
+
         if [[ $parallel == "N" ]]; then
           undeploy;
         fi

@@ -1,3 +1,9 @@
+v6.5 (19.07.2016)
+* fix JIRA authentication check according to new JIRA version
+
+v6.4 (13.07.2016)
+* improve Tomcat server restart: change order of the shutdown, log and temp files deletion and server startup
+
 v6.3 (28.06.2016)
 * improve locking
 
